@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+    <link rel="stylesheet" type="text/css" href="./updoad.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script
+      class="jsbin"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+    ></script>
+    <script class="jsbin" src="./upload.js" charset="utf-8"></script>
+    <script class="jsbin" src="./converter.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="file-upload">
+      <button
+        class="file-upload-btn"
+        type="button"
+        onclick="$('.file-upload-input').trigger( 'click' )"
+      >
+        Add File
+      </button>
+
+      <div class="file-upload-wrap">
+        <input
+          class="file-upload-input"
+          type="file"
+          onchange="convertExcelToJson(this)"
+          accept=".xlsx,.xls"
+        />
+        <div class="drag-text">
+          <h3>Drag and drop or select File</h3>
+        </div>
+      </div>
+      <div class="file-upload-content">
+        <div class="file-upload-file"></div>
+        <div class="file-title-wrap">
+          <button type="button" onclick="removeUpload()" class="remove-file">
+            Remove <span class="file-title">Uploaded File</span>
+          </button>
+          <button type="button" onclick="downloadJSON()" class="download-file">
+            Download JSON
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
